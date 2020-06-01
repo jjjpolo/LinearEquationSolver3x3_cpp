@@ -12,7 +12,7 @@ void inputCoeficients(int *aux, const char* vectorName)
     std::cout << std::endl;
 }
 
-displayEqSys(int *x, int *y, int *z, int *r)
+void displayEqSys(int *x, int *y, int *z, int *r)
 {
     for (int i = 0 ; i < 3 ; i++)
     {
