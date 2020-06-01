@@ -12,7 +12,7 @@ void inputCoeficients(int *aux, const char* vectorName)
     std::cout << std::endl;
 }
 
-displayEqSys(int *x, int *y, int *z, int *r)
+void displayEqSys(int *x, int *y, int *z, int *r)
 {
     for (int i = 0 ; i < 3 ; i++)
     {
@@ -58,9 +58,18 @@ int main()
     std::cout << "Delta z = " << deltaZ << std::endl;
 
     //Getting Solutions
-    int solveX = deltaX / deltaS;
-    int solveY = deltaY / deltaS;
-    int solveZ = deltaZ / deltaS;
+    int solveX = 0;
+    int solveY = 0;
+    int solveZ = 0;
+
+    if(deltaS != 0)
+    {
+        solveX = deltaX / deltaS;
+        solveY = deltaY / deltaS;
+        solveZ = deltaZ / deltaS;
+    }
+    else
+        std::cout << std::endl << "Delta S has a value equal to 0, division can't be performed" << std::endl;
 
     std::cout << std::endl << "=== Solutions === " << std::endl;
     std::cout << "x = " << solveX << std::endl;
